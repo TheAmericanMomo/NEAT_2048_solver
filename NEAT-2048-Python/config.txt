@@ -1,0 +1,106 @@
+[NEAT]
+#fitness_criterion     = max
+fitness_criterion     = mean
+#do we require the mean fitness or max fitness to improve?
+#to reduce the luck factor, we look at mean
+fitness_threshold     = 200000
+pop_size              = 250
+reset_on_extinction   = False
+
+[DefaultStagnation]
+species_fitness_func = max
+max_stagnation       = 500
+
+#species_elitism      = 2 
+species_elitism      = 2
+#prevents the number of species to pass under n
+
+[DefaultReproduction]
+elitism            = 2 
+#elitism is the number of best individuals that are not changed in a species
+survival_threshold = 0.4
+#The fraction for each species allowed to reproduce each generation. This defaults to 0.2.
+
+[DefaultGenome]
+# node activation options
+#activation_default      = sigmoid
+
+activation_default      = clamped
+activation_mutate_rate = 0
+#activation_mutate_rate  = 1.0
+#activation_mutate_rate  = 0.05
+#    activation_options      = relu
+#activation_options      = sigmoid gauss
+
+# node aggregation options
+
+#MAY HAVE TO MODIFY THESE
+aggregation_default     = sum
+aggregation_mutate_rate = 0.0
+aggregation_options     = sum
+
+# node bias options
+bias_init_mean          = 3.0
+bias_init_stdev         = 1.0
+bias_max_value          = 30.0
+bias_min_value          = -30.0
+bias_mutate_power       = 0.5
+#bias_mutate_rate        = 0.7
+bias_mutate_rate        = 0.3
+bias_replace_rate       = 0.1
+
+# genome compatibility options
+compatibility_disjoint_coefficient = 1.0
+compatibility_weight_coefficient   = 0.5
+
+# connection add/remove rates
+#conn_add_prob           = 0.5
+conn_add_prob           = 0.5
+conn_delete_prob        = 0.1
+
+# connection enable options
+enabled_default         = True
+enabled_mutate_rate     = 0.01
+ 
+feed_forward            = True          
+# COULD BE INTERESTING TO TRY TO MAKE IT RECURSIVE
+#making this false gives us a recurrent NN
+
+#every node is connected to every node
+#might be interesting to modify this
+#initial_connection      = partial_direct 0.5
+initial_connection      = full_direct
+
+
+# node add/remove rates
+#node_add_prob           = 0.2
+node_add_prob           = 0.3
+node_delete_prob        = 0.1
+
+# network parameters
+num_hidden              = 0  
+num_inputs              = 20
+num_outputs             = 4
+
+# node response options
+response_init_mean      = 1.0
+response_init_stdev     = 0.0
+response_max_value      = 30.0
+response_min_value      = -30.0
+response_mutate_power   = 0.0
+response_mutate_rate    = 0.0
+response_replace_rate   = 0.0
+
+# connection weight options
+weight_init_mean        = 0.0
+weight_init_stdev       = 1.0
+weight_max_value        = 30
+weight_min_value        = -30
+weight_mutate_power     = 0.5
+#weight_mutate_rate      = 0.8
+weight_mutate_rate      = 0.5
+#weight_replace_rate     = 0.1
+weight_replace_rate     = 0.1
+
+[DefaultSpeciesSet]
+compatibility_threshold = 2.0
