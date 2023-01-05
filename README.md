@@ -1,3 +1,6 @@
+Hello! Welcome to my repo. The intention of this project was to learn how to use Machine Learning libraries, apply what I am learning in the research papers that I read and have fun!!!
+
+
 The following link is a short video where I present myself
 https://youtu.be/3GOmPDNksSA
 
